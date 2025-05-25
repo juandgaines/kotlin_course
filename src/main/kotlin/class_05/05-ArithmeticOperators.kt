@@ -1,4 +1,4 @@
-package class_3
+package class_05
 
 fun main() {
     // Supongamos que tenemos 10 correos en la bandeja de entrada

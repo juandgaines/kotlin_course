@@ -1,4 +1,4 @@
-package class_5
+package class_07
 
 fun main() {
     // Solicita al usuario que ingrese su nombre

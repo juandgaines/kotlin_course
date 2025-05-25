@@ -1,4 +1,4 @@
-package class_6
+package class_09
 
 // Definimos una función para saludar al usuario
 fun greetUser(userName: String) { // Recibe el nombre del usuario como parámetro

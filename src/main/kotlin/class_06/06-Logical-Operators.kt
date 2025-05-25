@@ -1,4 +1,4 @@
-package class_4
+package class_06
 
 fun main() {
     // Definimos si el usuario está logueado y si tiene correos no leídos

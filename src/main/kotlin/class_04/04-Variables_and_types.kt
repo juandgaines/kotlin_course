@@ -1,4 +1,4 @@
-package class_2
+package class_04
 
 // En Kotlin, 'val' se usa para variables de solo lectura (inmutables)
 val appName: String = "Inbox Simulator" // No puede cambiar después de su asignación
