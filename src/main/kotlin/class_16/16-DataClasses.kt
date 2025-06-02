@@ -61,8 +61,8 @@ fun main() {
     // ==========================================
     
     println("\n4. DESTRUCTURING:")
-    val (asunto, remitente, leido) = email1
-    println("Extraído - Asunto: $asunto, De: $remitente")
+    val (asunto1, remitente, leido) = email1
+    println("Extraído - Asunto: $asunto1, De: $remitente")
     
     // ==========================================
     // 7. Ejemplo práctico

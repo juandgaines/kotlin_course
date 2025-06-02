@@ -14,7 +14,7 @@ package class_22
 // 1. Ejemplo con Email
 // ==========================================
 
-class Email(
+open class Email(
     val subject: String,                    // public - accesible desde afuera
     private val password: String,           // private - solo dentro de Email
     protected var isEncrypted: Boolean = false  // protected - para subclases

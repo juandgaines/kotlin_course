@@ -1,3 +1,5 @@
+@file:Suppress("MISSING_DEPENDENCY_SUPERCLASS_IN_TYPE_ARGUMENT")
+
 package class_08
 
 /**
@@ -49,7 +51,7 @@ fun main() {
     
     print("Ingresa el mensaje: ")
     val mensajeSinLimpiar = readLine()
-    val mensajeLimpio = mensajeSinLimpiar?.trim()  // Safe call + trim
+    val mensajeLimpio = mensajeSinLimpiar?.trim()// Safe call + trim
     
     println("Sin limpiar: '$mensajeSinLimpiar'")
     println("Limpio: '$mensajeLimpio'")

@@ -59,15 +59,7 @@ fun main() {
     
     println("\n=== EXCEPCIÓN PERSONALIZADA ===")
     
-    fun validateEmail(email: String) {
-        if (!email.contains("@")) {
-            throw EmailInvalidException("Debe contener @")
-        }
-        if (email.length < 5) {
-            throw EmailInvalidException("Muy corto")
-        }
-        println("✅ Email válido: $email")
-    }
+
     
     // Probar diferentes emails
     val testEmails = listOf("juan@test.com", "invalido", "a@b")
@@ -88,36 +80,7 @@ fun main() {
     
     println("\n=== EJEMPLO PRÁCTICO ===")
     
-    class EmailManager {
-        private val emails = mutableListOf<String>()
-        
-        fun addEmail(email: String): Boolean {
-            return try {
-                validateEmail(email)
-                emails.add(email)
-                println("Agregado: $email")
-                true
-            } catch (e: EmailInvalidException) {
-                println("Error: ${e.message}")
-                false
-            }
-        }
-        
-        fun getEmail(index: Int): String? {
-            return try {
-                emails[index]
-            } catch (e: IndexOutOfBoundsException) {
-                println("Índice $index no válido")
-                null
-            }
-        }
-        
-        fun showEmails() {
-            emails.forEachIndexed { index, email ->
-                println("[$index] $email")
-            }
-        }
-    }
+
     
     val manager = EmailManager()
     
@@ -157,7 +120,46 @@ fun main() {
     dividir(10, 0)
     */
 }
+fun validateEmail(email: String) {
+    if (!email.contains("@")) {
+        throw EmailInvalidException("Debe contener @")
+    }
+    if (email.length < 5) {
+        throw EmailInvalidException("Muy corto")
+    }
+    println("✅ Email válido: $email")
+}
 
+class EmailManager {
+    private val emails = mutableListOf<String>()
+
+    fun addEmail(email: String): Boolean {
+        return try {
+            validateEmail(email)
+            emails.add(email)
+            println("Agregado: $email")
+            true
+        } catch (e: EmailInvalidException) {
+            println("Error: ${e.message}")
+            false
+        }
+    }
+
+    fun getEmail(index: Int): String? {
+        return try {
+            emails[index]
+        } catch (e: IndexOutOfBoundsException) {
+            println("Índice $index no válido")
+            null
+        }
+    }
+
+    fun showEmails() {
+        emails.forEachIndexed { index, email ->
+            println("[$index] $email")
+        }
+    }
+}
 /**
  * RESUMEN:
  * - try-catch-finally - manejo de errores

@@ -15,7 +15,7 @@ package class_24
 
 abstract class EmailRepository {
     // Método abstracto - debe ser implementado
-    abstract fun save(email: Email)
+    abstract fun save(email: Email2)
     
     // Método concreto - implementación por defecto
     fun log(message: String) {
@@ -23,26 +23,26 @@ abstract class EmailRepository {
     }
     
     // Método concreto que usa el abstracto
-    fun saveWithLog(email: Email) {
+    fun saveWithLog(email: Email2) {
         log("Guardando: ${email.subject}")
         save(email)
     }
 }
 
-data class Email(val id: String, val subject: String, val body: String)
+data class Email2(val id: String, val subject: String, val body: String)
 
 // ==========================================
 // 2. Implementaciones concretas
 // ==========================================
 
 class DatabaseRepository : EmailRepository() {
-    override fun save(email: Email) {
+    override fun save(email: Email2) {
         println("💾 Guardado en base de datos")
     }
 }
 
 class FileRepository : EmailRepository() {
-    override fun save(email: Email) {
+    override fun save(email: Email2) {
         println("📁 Guardado en archivo")
     }
 }
@@ -62,7 +62,7 @@ abstract class SecureRepository(protected val key: String) : EmailRepository() {
 }
 
 class CloudRepository(key: String) : SecureRepository(key) {
-    override fun save(email: Email) {
+    override fun save(email: Email2) {
         val encrypted = encrypt(email.subject)
         println("☁️ Guardado encriptado: $encrypted")
     }
@@ -75,7 +75,7 @@ class CloudRepository(key: String) : SecureRepository(key) {
 fun main() {
     println("=== ABSTRACT CLASSES ===")
     
-    val email = Email("1", "Reunión", "Contenido importante")
+    val email = Email2("1", "Reunión", "Contenido importante")
     
     // ==========================================
     // 4. Usando las implementaciones
